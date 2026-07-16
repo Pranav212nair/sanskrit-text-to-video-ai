@@ -2,6 +2,8 @@
 
 An AI-powered application that transforms text input (specifically Sanskrit text) into engaging video stories with moral lessons. The system uses advanced AI models to generate scripts, create narration audio, produce timed captions, find relevant background videos, and render everything into a polished final video.
 
+**GitHub:** [Pranav212nair](https://github.com/Pranav212nair)
+
 ## 🌟 Features
 
 - **Sanskrit Text Processing**: Accepts Sanskrit text input and translates it to create meaningful stories
