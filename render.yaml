@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sanskrit-text-to-video-ai
+    runtime: docker
+    plan: starter
+    healthCheckPath: /
+    envVars:
+      - key: GROQ_KEY
+        sync: false
+      - key: PEXELS_KEY
+        sync: false

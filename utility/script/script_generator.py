@@ -8,6 +8,11 @@ GROQ_API_KEY = os.getenv('GROQ_KEY')
 model = "llama-3.1-8b-instant"
 
 def generate_script(topic):
+<<<<<<< HEAD
+    if not GROQ_API_KEY:
+        raise RuntimeError("GROQ_KEY is not configured")
+=======
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
     prompt = (
         """You are a creative storyteller who specializes in crafting very short, impactful moral stories for all ages based on user input, which will be given in Sanskrit.\n\nIf the input is in Sanskrit, you must first translate or interpret it to understand the intended topic, and then write a short fiction story or folktale (<140 words) with a clear moral.\n\nEach story should have a clear beginning, middle, and end, and end with a 1-line moral or lesson explicitly stated.\n\n# Output Format\nStrictly respond with a single valid JSON object like this: {\"script\": \"Story... Moral: ...\" }\n\nOnly return this object and nothing else.\n\n# Example\nInput: \n\"सत्यं वद\" ("Speak the truth")\n\nOutput:\n{\"script\": \"Once there was a boy who always spoke the truth, even when it was hard. His honesty earned everyone’s trust. One day, his truthfulness saved his village from danger. Moral: Always speak the truth.\"}\n\nNow, using the given Sanskrit input, generate a brief, engaging, and unique story with a clear moral, in the above JSON format.\n\n--\n"""
     )

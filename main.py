@@ -37,6 +37,13 @@ async def main_chat(message: cl.Message):
         return
 
     # 3. Generate Audio
+<<<<<<< HEAD
+    audio_file = os.path.abspath("audio_tts.mp3")
+    await cl.Message(content="Generating narration audio for the story...", author="system").send()
+    try:
+        print("[APP] Generating audio...")
+        audio_file = await generate_audio(script, audio_file)
+=======
     audio_file = "audio_tts.wav"
     await cl.Message(content="Generating narration audio for the story...", author="system").send()
     try:
@@ -44,6 +51,7 @@ async def main_chat(message: cl.Message):
         await generate_audio(script, audio_file)
         # Convert to absolute path for render engine
         audio_file = os.path.abspath(audio_file)
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
         print(f"[APP] Audio generated: {audio_file}")
         await cl.Message(content="Audio generated!", author="system").send()
     except Exception as e:
@@ -58,9 +66,17 @@ async def main_chat(message: cl.Message):
     timed_captions = []
     try:
         print("[APP] Generating captions...")
+<<<<<<< HEAD
+        # Simple caption: split script into sentences with duration-based timing
+        sentences = script.split('. ')
+        from moviepy.editor import AudioFileClip
+        with AudioFileClip(audio_file) as audio_clip:
+            approx_duration = max(1.0, float(audio_clip.duration) / max(1, len(sentences)))
+=======
         # Simple caption: split script into sentences with basic timing
         sentences = script.split('. ')
         approx_duration = 3  # ~3 seconds per sentence (adjust based on audio)
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
         current_time = 0
         for sentence in sentences:
             if sentence.strip():

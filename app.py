@@ -18,13 +18,21 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     SAMPLE_TOPIC = args.topic
+<<<<<<< HEAD
+    SAMPLE_FILE_NAME = os.path.abspath("audio_tts.mp3")
+=======
     SAMPLE_FILE_NAME = "audio_tts.wav"
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
     VIDEO_SERVER = "pexel"
 
     response = generate_script(SAMPLE_TOPIC)
     print("script: {}".format(response))
 
+<<<<<<< HEAD
+    SAMPLE_FILE_NAME = asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
+=======
     asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
 
     timed_captions = generate_timed_captions(SAMPLE_FILE_NAME)
     print(timed_captions)

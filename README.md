@@ -1,5 +1,10 @@
 # Text-To-Video AI 🎬
 
+<<<<<<< HEAD
+Link- http://localhost:8000
+
+=======
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
 An AI-powered application that transforms text input (specifically Sanskrit text) into engaging video stories with moral lessons. The system uses advanced AI models to generate scripts, create narration audio, produce timed captions, find relevant background videos, and render everything into a polished final video.
 
 **GitHub:** [Pranav212nair](https://github.com/Pranav212nair)
@@ -236,6 +241,31 @@ The application logs API responses to:
 
 These logs help debug issues and track API usage.
 
+<<<<<<< HEAD
+## Live Deployment
+
+The project includes a Docker deployment configuration.
+
+1. Copy `.env.example` to `.env` and set `GROQ_KEY` and `PEXELS_KEY`.
+2. Never commit `.env`; it is excluded by `.gitignore` and `.dockerignore`.
+3. Push the repository to GitHub.
+4. Deploy the repository with a Docker-compatible host such as Render, Railway, or Fly.io.
+5. Add `GROQ_KEY` and `PEXELS_KEY` as secret environment variables in the host dashboard.
+6. Start command:
+   ```bash
+   chainlit run main.py --host 0.0.0.0 --port 8000
+   ```
+
+For Render, `render.yaml` provides the web service setup. Render will build `Dockerfile` and create secret fields for the API keys.
+
+### Production checklist
+
+- Add Chainlit authentication before making the endpoint public, because each request consumes Groq/Pexels resources.
+- Set a reasonable upload/message limit for the host and add concurrency/rate limits.
+- Use persistent object storage if generated videos must remain available after container restarts.
+
+=======
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
 ---
 
 **Note**: This project is designed for educational and creative purposes. Ensure you comply with API usage terms and video licensing when using generated content.

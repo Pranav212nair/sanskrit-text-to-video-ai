@@ -1,0 +1,10 @@
+.git
+.env
+.venv
+venv
+.chainlit
+.logs
+__pycache__
+*.mp4
+*.wav
+*.mp3

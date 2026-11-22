@@ -9,7 +9,11 @@ load_dotenv()
 
 model = "llama-3.1-8b-instant"
 GROQ_API_KEY = os.environ.get('GROQ_KEY')
+<<<<<<< HEAD
+client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
+=======
 client = Groq(api_key=GROQ_API_KEY)
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
 
 log_directory = ".logs/gpt_logs"
 
@@ -78,6 +82,11 @@ def getVideoSearchQueriesTimed(script,captions_timed):
     return None
 
 def call_OpenAI(script,captions_timed):
+<<<<<<< HEAD
+    if client is None:
+        raise RuntimeError("GROQ_KEY is not configured")
+=======
+>>>>>>> f06b6eb077bf034673c1e548e6a2a71ab1aa60e6
     user_content = """Script: {}
 Timed Captions:{}
 """.format(script,"".join(map(str,captions_timed)))
